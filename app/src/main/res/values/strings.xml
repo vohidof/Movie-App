@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Movie App</string>
+    <string name="movies">Movies</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="muhammadumar">Muhammadumar</string>
+    <string name="_02_03_2020">02.03.2020</string>
+    <string name="avengers">Avengers</string>
+    <string name="movie_date">Movie date</string>
+    <string name="save">Save</string>
+    <string name="about_movie">About movie</string>
+    <string name="movie_authors">Movie authors</string>
+    <string name="movie_name">Movie name</string>
+    <string name="add_movie">Add movie</string>
+</resources>
