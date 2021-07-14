@@ -12,7 +12,6 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.movieapp.EditMovie
 import com.example.movieapp.R
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.item_rv.view.*
 
 class RvAdapter(var context: Context, var list: ArrayList<RvModel>) :
@@ -35,6 +34,8 @@ class RvAdapter(var context: Context, var list: ArrayList<RvModel>) :
             itemView.btn_delete.setOnClickListener {
                 MySharedPreference.init(context)
 
+                list.remove(list[position])
+
                 MySharedPreference.objectString = list
 
                 notifyDataSetChanged()
@@ -42,7 +43,11 @@ class RvAdapter(var context: Context, var list: ArrayList<RvModel>) :
                 Toast.makeText(context, "Deleted", Toast.LENGTH_SHORT).show()
             }
 
-
+            /*itemView.setOnClickListener {
+                val intent = Intent(context, Default::class.java)
+                intent.putExtra("position", position)
+                context.startActivity(intent)
+            }*/
         }
     }
 
@@ -54,9 +59,7 @@ class RvAdapter(var context: Context, var list: ArrayList<RvModel>) :
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.onBind(list[position], position)
-
     }
 
     override fun getItemCount(): Int = list.size
-
 }
